@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<section class="catalog">
+    <div class="container">
+        <div class="products">
+            <ul class="products-with-cut">
+                {% for p in elements %}
+                    <li class="product_in_list">
+
+                        <a href="{{ p.clothes.get_absolute_url }}"><div class="photo" style="background-image: url({{ p.clothes.photo.url }});"></div></a>
+                        <div class="info">
+                            <a href="{{ p.clothes.get_absolute_url }}"><p class="title-clothes">{{ p.clothes.name }}</p></a>
+
+                            <p class="price">{% if p.clothes.pricedisc %}<span class="old-price">{{ p.clothes.price }}</span>  {{ p.clothes.pricedisc }}
+                            {% else %}<span class="norm-price">{{ p.clothes.price }}</span>
+                            {% endif %}</p>
+                            <p class="number">Количество: {{ p.quantity }}</p>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="info">
+            <h2>Общая стоимость: {{ money }}</h2>
+            <form action="{% url 'payment' %}">
+                <input type="hidden" value="{{ money }}" name="price">
+                <button type="submit">Оплатить</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

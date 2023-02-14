@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="f-box">
+        <div class="other">
+            <h2>{{ post.name }}</h2>
+            <img src="{{ post.photo }}" alt="">
+            <p class="color">Цвет: {{ post.color }}</p>
+            <p class="price">Цена: {{ post.price }}</p>
+            {% if request.user.is_authenticated %}
+            <form method="post" action="/saveorder/">
+                {% csrf_token %}
+            <input type="hidden" value="{{ post.slug }}" name="prod">
+                <style>
+#id_quantity {
+  all: unset;
+  -moz-appearance: textfield;
+  width: 3em;
+  text-align: center;
+}
+#id_quantity::-webkit-inner-spin-button {
+  display: none;
+}
+</style>
+            <p><label class="form-label" for="id_quantity">Количество: </label><br>
+            <button type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+            <input type="number" name="quantity" min="1" max="{{ post.quantity }}" value="1" readonly id="id_quantity">
+            <button type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+            </p>
+
+                <button type="submit">В корзину</button>
+                <h1></h1>
+
+            </form>
+        {% else %}
+                <a href="{% url 'register' %}"><button type="submit">Необходимо войти</button></a>
+        {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

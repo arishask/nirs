@@ -1,0 +1,118 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+<style>
+    .product-wrapper {
+        display: inline-block;
+        vertical-align: top;
+        width: 350px;
+        margin-left: 100px;
+        transition: width .2s;}
+
+    .product {
+        display: block;
+        border: 1px solid #efece8;
+        border-radius: 3px;
+        position: relative;
+        background: #fff;
+        text-decoration: none;
+        color: #474747;
+        z-index: 0;
+        height: 300px;
+        margin: 0 20px 50px 0;
+    }
+
+    .products {
+        list-style: none;
+        margin: 0 10px 0 0;
+        padding: 0;}
+
+    .product-photo {
+        position: static;
+        padding-bottom: 90%;
+        overflow: hidden;
+
+    }
+
+    .product-photo img {
+        /*position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+        transition: transform .4s ease-out;*/
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 340px;
+        height: 290px;
+        overflow: hidden;
+    }
+
+    .product:hover .product-photo img {
+        transform: scale(1.05);}
+</style>
+
+<ul class="products clearfix">
+    <li class="product-wrapper">
+        <a href="/item/heart" class="product btn">
+            <div class="product-photo">
+                <img src="https://sun9-east.userapi.com/sun9-57/s/v1/ig2/UZVNgq6o8i9tcX1i9gmUgwb9gL0Z-vH-XZllj2MWruwpDT81CxGKAiTUAO8_FdcHyT8VIQi1Tdh3o-p8UwUiLeN5.jpg?size=1210x1107&quality=95&type=album">
+                <p></p>
+                Добавить в корзину
+            </div>
+        </a>
+	</li>
+    <li class="product-wrapper">
+        <a href="/item/sunny-day" class="product btn">
+            <div class="product-photo">
+                <img src="https://sun9-east.userapi.com/sun9-28/s/v1/ig2/Hb4AMc86G0g-LDcUtq4KxoJsfyaTGraQx2hr93U0iCepoIs3e5yQr7vMf4CSrAsWCQs3B83lNOYvZVLw6Tmf-FZ1.jpg?size=1200x928&quality=95&type=album/">
+                <p></p>
+                Добавить в корзину
+            </div>
+        </a>
+	</li>
+	<li class="product-wrapper">
+        <a href="/item/dyantus-peach" class="product btn">
+            <div class="product-photo">
+                <img src="https://sun9-east.userapi.com/sun9-59/s/v1/ig2/mbF0UHlwrPFTdya8AO7dOJy2291gxbeTwWTPdoFJVOKjjW__Bq6nr8R7ifvEp3v1zBdwuHn6W19PFCM47ywwyX7s.jpg?size=1080x1080&quality=96&type=album">
+                <p></p>
+                Добавить в корзину
+            </div>
+        </a>
+	</li>
+	<li class="product-wrapper">
+        <a href="/item/belye-piony" class="product btn">
+            <div class="product-photo">
+                <img src="https://sun9-west.userapi.com/sun9-55/s/v1/ig2/1gBpfuNDJxN91Ki0eBjN7Gm_Qic4KYlL7gE1RryhZroOqYk7tsrXrk2FUNsRxhCa5Vzl66IQABqfz6uyTPCTm7OT.jpg?size=960x822&quality=95&type=album">
+                <p></p>
+                Добавить в корзину
+            </div>
+        </a>
+	</li>
+	<li class="product-wrapper">
+        <a href="/item/roses-malin" class="product btn">
+            <div class="product-photo">
+                <img src="https://sun9-north.userapi.com/sun9-86/s/v1/ig2/WjYUZnJq0dZXCnuVo8zb0YTJRcoNFz4wxsd7q_gzHzgalB56IH12X0_x0AH-p1569YaYsiLoeRzqmr3mJjeqs5ja.jpg?size=1200x1022&quality=95&type=album">
+                <p></p>
+                Добавить в корзину
+            </div>
+        </a>
+	</li>
+	<li class="product-wrapper">
+        <a href="/item/krasnye-tulpany" class="product btn">
+            <div class="product-photo">
+                <img src="https://sun9-west.userapi.com/sun9-61/s/v1/ig2/jMxuqGKN97SycD0iCs1_Jn3-XgEbh7EsVSgloZm0wWBt0k-yUSLNempw0CMP8FlVy5-m0PCAHN382qNKPMBZgzfh.jpg?size=930x731&quality=95&type=album">
+                <p></p>
+                Добавить в корзину
+            </div>
+        </a>
+	</li>
+</ul>
+
+{% endblock %}

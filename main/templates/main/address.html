@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    <title> Адреса магазинов</title>
+{% endblock %}
+
+{% block content %}
+        {% for el in addr %}
+            <div class="alert alert-warning mt-2">
+            <h3>{{ el.address }}</h3>
+            <p>{{ el.number }}</p>
+            </div>
+        {% endfor %}
+
+{% endblock %}
